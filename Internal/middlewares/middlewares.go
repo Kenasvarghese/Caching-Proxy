@@ -21,7 +21,9 @@ func WrapHandler(h http.Handler, middlewares ...Middleware) http.Handler {
 func RequestLogger(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		start := time.Now()
-		next.ServeHTTP(w, r)
-		log.Printf("Method: %s, Path: %s, Duration: %s", r.Method, r.URL.Path, time.Now().Sub(start))
+		// ResponseWriter wrapper for logging the written http status
+		lw := newLoggingResponseWriter(w)
+		next.ServeHTTP(lw, r)
+		log.Printf("Method: %s, Path: %s, Duration: %s, Status: %d", r.Method, r.URL.Path, time.Since(start), lw.status)
 	})
 }
