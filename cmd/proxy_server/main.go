@@ -5,10 +5,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/Kenasvarghese/Caching-Proxy/Internal/config"
-	"github.com/Kenasvarghese/Caching-Proxy/Internal/middlewares"
-	"github.com/Kenasvarghese/Caching-Proxy/Internal/proxy"
-	"github.com/Kenasvarghese/Caching-Proxy/Internal/rate_limiter"
+	"github.com/Kenasvarghese/Reverse-Proxy/Internal/config"
+	"github.com/Kenasvarghese/Reverse-Proxy/Internal/middlewares"
+	"github.com/Kenasvarghese/Reverse-Proxy/Internal/proxy"
+	"github.com/Kenasvarghese/Reverse-Proxy/Internal/rate_limiter"
 )
 
 func main() {

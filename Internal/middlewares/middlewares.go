@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/Kenasvarghese/Caching-Proxy/Internal/rate_limiter"
+	"github.com/Kenasvarghese/Reverse-Proxy/Internal/rate_limiter"
 )
 
 type Middleware func(http.Handler) http.Handler
